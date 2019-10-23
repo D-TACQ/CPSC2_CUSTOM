@@ -2,7 +2,7 @@
 
 DC=$(date +%y%m%d%H%M%S)
 SEQ=39
-PKGID=cpsc2_custom
+PKGID=custom_cpsc2
 
 TOP=.
 

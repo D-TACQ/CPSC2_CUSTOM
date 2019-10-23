@@ -3,18 +3,20 @@
 # create aliases for 6+8 AI:WF
 
 
+mkdir -p /usr/local/epics/db/
+
 (
 	let ic=1
 	for VWF in $(grep 1:AI:WF:0[1-8]:V$ /tmp/records.dbl)
 	do		
-		alias("$VWF", "north:$(printf "%02d:V" $ic)"
+		echo 'alias("'$VWF'", "north:'$(printf "%02d:V" $ic)'")'
 		let ic=$ic+1
 	done
 
 	let ic=1
-	for IWF in $(egrep -e 1:AI:WF:0[89]:V$ -e 1:AI:WF:1[0-6]:V$ /tmp/records.dbl)
+	for IWF in $(egrep -e 1:AI:WF:09:V$ -e 1:AI:WF:1[0-6]:V$ /tmp/records.dbl)
 	do
-		alias("$IWF", "north:$(printf "%02d:I" $ic)"
+		echo 'alias("'$IWF'", "north:'$(printf "%02d:I" $ic)'")'
 		let ic=$ic+1
 	done
 
