@@ -7,6 +7,7 @@ PKGID=cpsc2_custom
 TOP=.
 
 rm -Rf opkg/*
+mkdir -p release
 mkdir -p opkg/usr/local/bin opkg/usr/local/init opkg/usr/local/epics/db
 
 cp ${TOP}epics/db/* opkg/usr/local/epics/db
